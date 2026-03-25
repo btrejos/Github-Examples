@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a reproducible bug or issue
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Report
+        Please fill out the details below to help us diagnose the issue.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Brief description of the issue
+      placeholder: Something is not working as expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How critical is this issue?
+      options:
+        - Low (minor inconvenience)
+        - Medium (affects functionality)
+        - High (blocking / critical)
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, app version, etc.
+      placeholder: e.g. Windows 11, Chrome 121, Node 20
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: Paste logs or attach screenshots if available
+      render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      description: Please confirm before submitting
+      options:
+        - label: I have searched for existing issues
+          required: true
+        - label: I have provided all necessary information
+          required: true
